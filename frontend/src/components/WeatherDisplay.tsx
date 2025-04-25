@@ -59,7 +59,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
   };
 
   return (
-    <div className={`weather-card transition-all duration-500 ${
+    <div className={`weather-card transition-all duration-500 pb-10 ${
       isNight ? 'bg-slate-800/90 text-white' : 'bg-white/90'
     }`}>
       <div className="flex items-center justify-between mb-6">
@@ -74,10 +74,6 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          {isNight ? 
-            <Moon className="text-yellow-200" size={24} /> : 
-            <Sun className="text-yellow-500" size={24} />
-          }
           <WeatherIcon 
             iconCode={data.icon} 
             size={38} 
