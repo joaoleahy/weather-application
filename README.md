@@ -1,122 +1,122 @@
 # Weather Application
 
-Uma aplicação web moderna para consulta de condições climáticas, desenvolvida com TypeScript, React e Node.js.
+A modern web application for weather conditions, developed with TypeScript, React, and Node.js.
 
-## Visão Geral
+## Overview
 
-O Weather Application permite aos usuários:
-- Buscar informações climáticas por nome de cidade
-- Obter dados meteorológicos baseados na localização atual
-- Visualizar detalhes como temperatura, umidade, velocidade do vento e condições climáticas
-- Alternar entre unidades métricas e imperiais
+The Weather Application allows users to:
+- Search for weather information by city name
+- Get weather data based on current location
+- View details such as temperature, humidity, wind speed, and weather conditions
+- Toggle between metric and imperial units
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 ### Frontend
-- React com TypeScript
-- Vite como bundler
-- Tailwind CSS e shadcn/ui para componentes de interface
-- React Hook Form para gerenciamento de formulários
-- Axios para requisições HTTP
+- React with TypeScript
+- Vite as bundler
+- Tailwind CSS and shadcn/ui for interface components
+- React Hook Form for form management
+- Axios for HTTP requests
 
 ### Backend
-- Node.js com TypeScript
-- Express para servidor HTTP
-- Axios para consumo da API OpenWeatherMap
-- Arquitetura modular com controllers, services e utils
+- Node.js with TypeScript
+- Express for HTTP server
+- Axios for consuming the OpenWeatherMap API
+- Modular architecture with controllers, services, and utils
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 weather-application/
-├── frontend/             # Aplicação React
+├── frontend/             # React Application
 │   ├── src/
-│   │   ├── components/   # Componentes React
+│   │   ├── components/   # React components
 │   │   ├── hooks/        # Custom hooks
-│   │   ├── pages/        # Páginas da aplicação
-│   │   ├── services/     # Serviços para API
-│   │   ├── types/        # Definições de tipos TypeScript
-│   │   └── utils/        # Funções utilitárias
+│   │   ├── pages/        # Application pages
+│   │   ├── services/     # API services
+│   │   ├── types/        # TypeScript type definitions
+│   │   └── utils/        # Utility functions
 │   └── ...
-└── backend/              # Servidor Node.js/Express
+└── backend/              # Node.js/Express Server
     ├── src/
-    │   ├── controllers/  # Controladores de rotas
-    │   ├── routes/       # Definições de rotas
-    │   ├── services/     # Serviços de negócio
-    │   ├── types/        # Definições de tipos TypeScript
-    │   └── utils/        # Funções utilitárias
+    │   ├── controllers/  # Route controllers
+    │   ├── routes/       # Route definitions
+    │   ├── services/     # Business services
+    │   ├── types/        # TypeScript type definitions
+    │   └── utils/        # Utility functions
     └── ...
 ```
 
-## Configuração e Execução Local
+## Setup and Local Execution
 
-### Pré-requisitos
-- Node.js 18+ instalado
-- Chave de API do OpenWeatherMap (obtenha em [OpenWeatherMap](https://openweathermap.org/api))
+### Prerequisites
+- Node.js 18+ installed
+- OpenWeatherMap API key (get it from [OpenWeatherMap](https://openweathermap.org/api))
 
 ### Backend
 
-1. Navegue até a pasta do backend:
+1. Navigate to the backend folder:
    ```bash
    cd backend
    ```
 
-2. Instale as dependências:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Crie um arquivo `.env` baseado no `.env.example`:
+3. Create a `.env` file based on `.env.example`:
    ```bash
    cp .env.example .env
    ```
 
-4. Edite o arquivo `.env` e adicione sua chave de API do OpenWeatherMap:
+4. Edit the `.env` file and add your OpenWeatherMap API key:
    ```
-   OPENWEATHERMAP_API_KEY=sua_chave_aqui
+   OPENWEATHERMAP_API_KEY=your_key_here
    PORT=5000
    ```
 
-5. Execute o servidor em modo de desenvolvimento:
+5. Run the server in development mode:
    ```bash
    npm run dev
    ```
 
-   O servidor estará disponível em `http://localhost:5000`.
+   The server will be available at `http://localhost:5000`.
 
 ### Frontend
 
-1. Navegue até a pasta do frontend:
+1. Navigate to the frontend folder:
    ```bash
    cd frontend
    ```
 
-2. Instale as dependências:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Crie um arquivo `.env` baseado no `.env.example`:
+3. Create a `.env` file based on `.env.example`:
    ```bash
    cp .env.example .env
    ```
 
-4. Edite o arquivo `.env` para apontar para o backend:
+4. Edit the `.env` file to point to the backend:
    ```
    VITE_API_URL=http://localhost:5000/api/weather
    ```
 
-5. Execute a aplicação em modo de desenvolvimento:
+5. Run the application in development mode:
    ```bash
    npm run dev
    ```
 
-   A aplicação estará disponível em `http://localhost:3000`.
+   The application will be available at `http://localhost:3000`.
 
-## Endpoints da API
+## API Endpoints
 
 ### Backend
 
-- `GET /api/weather/cities?query={cityName}` - Busca sugestões de cidades
-- `GET /api/weather/city?city={cityName}` - Busca dados climáticos por nome de cidade
-- `GET /api/weather/coords?lat={latitude}&lon={longitude}` - Busca dados climáticos por coordenadas
+- `GET /api/weather/cities?query={cityName}` - Get city suggestions
+- `GET /api/weather/city?city={cityName}` - Get weather data by city name
+- `GET /api/weather/coords?lat={latitude}&lon={longitude}` - Get weather data by coordinates
