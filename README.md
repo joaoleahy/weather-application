@@ -2,6 +2,11 @@
 
 A modern web application for weather conditions, developed with TypeScript, React, and Node.js.
 
+![image](https://github.com/user-attachments/assets/516aa474-1c3d-4496-872a-135bf18695cf)
+
+![image](https://github.com/user-attachments/assets/ced7df7a-b801-4240-a1d0-997d47950a77)
+
+
 ## Overview
 
 The Weather Application allows users to:
