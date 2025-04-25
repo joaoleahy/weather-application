@@ -12,8 +12,6 @@ import {
   ThermometerSnowflake,
   ArrowDown,
   ArrowUp,
-  Sun,
-  Moon,
   ArrowRightLeft
 } from 'lucide-react';
 import { Toggle } from './ui/toggle';
