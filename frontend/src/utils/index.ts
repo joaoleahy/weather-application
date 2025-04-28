@@ -31,3 +31,15 @@ export function isNightTime(timestamp: number, timezone: number): boolean {
   const hours = date.getUTCHours();
   return hours < 6 || hours > 18;
 }
+
+export const formatDateTime = (timestamp: number, timezone: number) => {
+  const date = new Date((timestamp + timezone) * 1000);
+  return new Intl.DateTimeFormat('en-US', {
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    timeZone: 'UTC',
+  }).format(date);
+};

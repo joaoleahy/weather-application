@@ -1,5 +1,5 @@
 import React from 'react';
-import { WeatherData } from '../types';
+import { WeatherDisplayProps, WeatherStatProps } from '../types';
 import WeatherIcon from './WeatherIcon';
 import { useWeatherUtils } from '../hooks/useWeatherUtils';
 import { 
@@ -15,10 +15,7 @@ import {
   ArrowRightLeft
 } from 'lucide-react';
 import { Toggle } from './ui/toggle';
-
-interface WeatherDisplayProps {
-  data: WeatherData;
-}
+import { formatDateTime } from '@/utils';
 
 const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
   const { 
@@ -37,18 +34,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
   const displayTemp = getDisplayTemp();
   const windSpeedDisplay = getDisplayWindSpeed(data.windSpeed);
   const visibilityDisplay = getDisplayVisibility(data.visibility / 1000);
-
-  const formatDateTime = () => {
-    const date = new Date((data.timestamp + data.timezone) * 1000);
-    return new Intl.DateTimeFormat('en-US', {
-      weekday: 'long',
-      month: 'short',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      timeZone: 'UTC',
-    }).format(date);
-  };
+  const formattedDateTime = formatDateTime(data.timestamp, data.timezone);
 
   const capitalize = (str: string) => {
     return str.replace(/\w\S*/g, (txt) => {
@@ -68,7 +54,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
             {data.city}, {data.country}
           </h1>
           <p className={`text-sm ${isNight ? 'text-gray-300' : 'text-gray-500'}`}>
-            {formatDateTime()}
+            {formattedDateTime}
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -178,14 +164,6 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
     </div>
   );
 };
-
-interface WeatherStatProps {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  isNight: boolean;
-  action?: React.ReactNode;
-}
 
 const WeatherStat: React.FC<WeatherStatProps> = ({ icon, label, value, isNight, action }) => (
   <div className={`rounded-xl p-3 flex items-center ${

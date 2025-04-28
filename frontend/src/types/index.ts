@@ -24,3 +24,15 @@ export interface WeatherData {
   timestamp: number;
   timezone: number;
 }
+
+export interface WeatherDisplayProps {
+  data: WeatherData;
+}
+
+export interface WeatherStatProps {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  isNight: boolean;
+  action?: React.ReactNode;
+}
