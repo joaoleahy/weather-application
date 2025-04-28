@@ -36,3 +36,8 @@ export interface WeatherStatProps {
   isNight: boolean;
   action?: React.ReactNode;
 }
+
+export interface SearchBarProps {
+  onCitySelect: (city: City) => void;
+  onLocationRequest: () => void;
+}

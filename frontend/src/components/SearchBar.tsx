@@ -3,11 +3,7 @@ import { Search, MapPin } from 'lucide-react';
 import { getCitySuggestions } from '../services/weatherService';
 import { City } from '../types';
 import { toast } from 'sonner';
-
-interface SearchBarProps {
-  onCitySelect: (city: City) => void;
-  onLocationRequest: () => void;
-}
+import { SearchBarProps } from '../types';
 
 const SearchBar: React.FC<SearchBarProps> = ({ onCitySelect, onLocationRequest }) => {
   const [query, setQuery] = useState('');
