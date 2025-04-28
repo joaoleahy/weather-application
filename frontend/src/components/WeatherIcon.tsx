@@ -10,7 +10,6 @@ import {
   CloudSun,
   Moon,
   CloudMoon,
-  Wind
 } from 'lucide-react';
 
 interface WeatherIconProps {

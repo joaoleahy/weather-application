@@ -2,9 +2,6 @@ import { useState } from 'react';
 import { 
   convertToFahrenheit, 
   convertToMph, 
-  formatTemperature, 
-  formatWindSpeed, 
-  formatVisibility, 
   isNightTime as checkIsNightTime 
 } from '../utils';
 
