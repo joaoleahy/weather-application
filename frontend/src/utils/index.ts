@@ -29,7 +29,7 @@ export function formatVisibility(visibility: number, isKm: boolean): string {
 export function isNightTime(timestamp: number, timezone: number): boolean {
   const date = new Date((timestamp + timezone) * 1000);
   const hours = date.getUTCHours();
-  return hours < 6 || hours > 18;
+  return hours < 6 || hours >= 18;
 }
 
 export const formatDateTime = (timestamp: number, timezone: number) => {
